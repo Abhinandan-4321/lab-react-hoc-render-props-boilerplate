@@ -1,16 +1,11 @@
 import React, { useState } from 'react'
-
-export default function LikeImage() {
-
-  const [likeImageCounter, setLikeImageCounter] = useState(0);
-
-  const handleLikeImageCount = ()=>{
-    setLikeImageCounter(likeImageCounter+1);
-  }
+import Wrap from './Wrap'
+function LikeImage(props) {
 
   return (
     <div>
-      <button onClick={handleLikeImageCount}>Like Image {likeImageCounter}</button>
+      <button onClick={props.handleCounter}>Like Image {props.counter}</button>
     </div>
   )
 }
+export default Wrap(LikeImage)

@@ -1,16 +1,11 @@
 import React, { useState } from 'react'
-
-export default function LikePost() {
-
-  const [likePostCounter, setPostCounter] = useState(0);
-
-  const handlePostCount = ()=>{
-    setPostCounter(likePostCounter+1);
-  }
+import Wrap from './Wrap'
+function LikePost(props) {
 
   return (
     <div>
-      <button onClick={handlePostCount}>Like Post {likePostCounter}</button>
+      <button onClick={props.handleCounter}>Like Post {props.counter}</button>
     </div>
   )
 }
+export default Wrap(LikePost)
